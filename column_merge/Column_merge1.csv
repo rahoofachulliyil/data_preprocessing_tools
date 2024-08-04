@@ -1,0 +1,4 @@
+column1,column2,column3,new_column_name
+activity1,activity2,activity3,activity_type
+activity_date1,activity_date2,,activity_date
+event_detail,E,,Event_Etail

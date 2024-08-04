@@ -1,0 +1,276 @@
+{
+  "name": "column_string_operations",
+  "type": "pandas",
+  "display_name": "Column String Operations",
+  "category": "test",
+  "requirements_path": "requirements.txt",
+  "documentation_path": "readme.md",
+  "integration": {
+    "input": [
+      {
+        "name": "data",
+        "type": "pandas.DataFrame",
+        "mode": "single",
+        "visible": true
+      },
+      {
+        "name": "config",
+        "type": "Dict",
+        "mode": "single",
+        "visible": false
+      }
+    ],
+    "output": [
+      {
+        "name": "data",
+        "type": "pandas.DataFrame"
+      }
+    ],
+    "function_call": "column_string_operations.process($input)"
+  },
+  "ui": {
+    "config": {
+      "label": "mode",
+      "mode": "single",
+      "options": {
+        "Column_padding": {
+          "label": "Column_padding",
+
+          "mode": "all",
+          "options": {
+            "columns": {
+              "label": "Column Name",
+              "type": "dropdown",
+              "required": true,
+              "isMetaData": true,
+              "className": "p-col-6",
+              "metadata": {
+                "source": "data",
+                "type": "columns"
+              },
+              "name": "columns"
+            },
+            "string_length": {
+              "label": "Size of total string length",
+              "type": "text",
+              "required": true,
+              "isMetaData": false,
+              "className": "p-col-6",
+              "name": "value"
+            },
+            "operator": {
+              "label": "Operator",
+              "type": "dropdown",
+              "required": true,
+              "isMetaData": false,
+              "values": {
+                "left": "left",
+                "right": "right",
+                "both": "both"
+              },
+              "className": "p-col-6",
+              "name": "operator"
+            },
+            "character": {
+              "label": "enter a character",
+              "type": "text",
+              "required": true,
+              "isMetaData": false,
+              "className": "p-col-6",
+              "name": "value"
+            }
+          }
+        },
+        "Column_merge_with_replace": {
+          "label": "Column_merge_with_replace",
+          "mode": "all",
+          "options": {
+            "column1": {
+              "label": "Column1",
+              "type": "dropdown",
+              "required": true,
+              "isMetaData": true,
+              "className": "p-col-6",
+              "name": "column1",
+              "metadata": {
+                "source": "data",
+                "type": "columns"
+              }
+            },
+            "column2": {
+              "label": "Column2",
+              "type": "dropdown",
+              "required": true,
+              "isMetaData": true,
+              "className": "p-col-6",
+              "name": "column2",
+              "metadata": {
+                "source": "data",
+                "type": "columns"
+              }
+            },
+            "column_name_for_replace": {
+              "label": "column name for replace",
+              "type": "dropdown",
+              "required": true,
+              "isMetaData": true,
+              "className": "p-col-6",
+              "name": "column name for replace",
+              "metadata": {
+                "source": "data",
+                "type": "columns"
+              }
+            },
+            "separator": {
+              "label": " Separator ",
+              "type": "text",
+              "required": false,
+              "isMetaData": false,
+              "className": "p-col-6",
+              "name": "separator"
+            },
+            "na_rep": {
+              "label": " Null  Value Representation ",
+              "type": "text",
+              "required": false,
+              "isMetaData": false,
+              "className": "p-col-6",
+              "name": "null value represantaion"
+            }
+          }
+        },
+        "Column_merge_with_new_column": {
+          "label": "Column_merge_with_new_column",
+
+          "mode": "all",
+          "options": {
+            "column1": {
+              "label": "Column1",
+              "type": "dropdown",
+              "required": true,
+              "isMetaData": true,
+              "className": "p-col-6",
+              "name": "column1",
+              "metadata": {
+                "source": "data",
+                "type": "columns"
+              }
+            },
+            "column2": {
+              "label": "Column2",
+              "type": "dropdown",
+              "required": true,
+              "isMetaData": true,
+              "className": "p-col-6",
+              "name": "column2",
+              "metadata": {
+                "source": "data",
+                "type": "columns"
+              }
+            },
+            "new_column_name": {
+              "label": "  New Column Name ",
+              "type": "text",
+              "required": true,
+              "isMetaData": false,
+              "className": "p-col-6",
+              "name": "new_column"
+            },
+            "separator": {
+              "label": " Separator ",
+              "type": "text",
+              "required": false,
+              "isMetaData": false,
+              "className": "p-col-6",
+              "name": "separator"
+            },
+            "na_rep": {
+              "label": " Null  Value Representation ",
+              "type": "text",
+              "required": false,
+              "isMetaData": false,
+              "className": "p-col-6",
+              "name": "null value represantaion"
+            }
+          }
+        },
+        "substring": {
+          "label": "Substring",
+          "mode": "all",
+          "options": {
+            "selected_column": {
+              "label": "Select the column",
+              "type": "dropdown",
+              "required": true,
+              "isMetaData": true,
+              "metadata": {
+                "source": "data",
+                "type": "columns"
+              },
+              "className": "p-col-12",
+              "name": "selected_column"
+            },
+            "new_column": {
+              "label": "New column requirement",
+              "type": "dropdown",
+              "required": true,
+              "isMetaData": false,
+              "className": "p-col-12",
+              "name": "new_column",
+              "values": {
+                "True": "True",
+                "False": "False"
+              }
+            },
+            "new_column_name": {
+              "label": "New column name (Need to enter only if the new column requirement was marked 'True')",
+              "type": "text",
+              "required": false,
+              "isMetaData": false,
+              "className": "p-col-6",
+              "name": "new_column_name"
+            },
+            "subsplit": {
+              "label": "Select the operation",
+              "type": "dropdown",
+              "required": true,
+              "isMetaData": false,
+              "className": "p-col-12",
+              "name": "subsplit",
+              "values": {
+                "substring": "Substring"
+              }
+            },
+            "start_index": {
+              "label": "Start Index",
+              "type": "text",
+              "required": false,
+              "isMetaData": false,
+              "className": "p-col-6",
+              "name": "start_index"
+            },
+            "stop_index": {
+              "label": "Stop Index",
+              "type": "text",
+              "required": false,
+              "isMetaData": false,
+              "className": "p-col-6",
+              "name": "stop_index"
+            },
+            "step": {
+              "label": "Step",
+              "type": "text",
+              "required": false,
+              "isMetaData": false,
+              "className": "p-col-6",
+              "name": "step"
+            }
+          }
+        }
+      }
+    }
+  },
+  "control_flow": {},
+  "visualization": [],
+  "deployment": {}
+}

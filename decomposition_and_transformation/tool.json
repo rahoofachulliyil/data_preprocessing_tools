@@ -1,0 +1,35 @@
+{
+  "name": "decomposition_and_transformation",
+  "type": "pandas",
+  "category": "test",
+  "display_name": " Decomposition and Transformation",
+  "requirements_path": "requirements.txt",
+  "documentation_path": "readme.md",
+  "integration": {
+    "input": [
+      {
+        "name": "data",
+        "type": "pandas.DataFrame",
+        "mode": "single",
+        "visible": true
+      },
+      {
+        "name": "column_data",
+        "type": "pandas.DataFrame",
+        "mode": "single",
+        "visible": true
+      }
+    ],
+    "output": [
+      {
+        "name": "data",
+        "type": "pandas.DataFrame"
+      }
+    ],
+    "function_call": "decomposition_and_transformation.process($input)"
+  },
+  "ui": {},
+  "control_flow": {},
+  "visualization": [],
+  "deployment": {}
+}

@@ -1,0 +1,36 @@
+{
+    "name": "column_rename",
+    "type": "pandas",
+    "category": "test",
+    "display_name": "column rename",
+    "requirements_path": "requirements.txt",
+    "documentation_path": "readme.md",
+    "integration": {
+      "input": [
+        {
+          "name": "data",
+          "type": "pandas.DataFrame",
+          "mode": "single",
+          "visible": true
+        },
+        {
+            "name": "column_map_info",
+            "type": "pandas.DataFrame",
+            "mode": "single",
+            "visible": true
+          }
+      ],
+      "output": [
+        {
+          "name": "data",
+          "type": "pandas.DataFrame"
+        }
+      ],
+      "function_call": "column_rename.process($input)"
+    },
+    "ui": {},
+    "control_flow": {},
+    "visualization": [],
+    "deployment": {}
+  }
+  

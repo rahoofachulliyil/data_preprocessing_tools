@@ -1,0 +1,160 @@
+{
+  "name": "database_insertion",
+  "type": "pandas",
+  "display_name": "database insertion",
+  "category": "test",
+  "requirements_path": "requirements.txt",
+  "documentation_path": "readme.md",
+  "integration": {
+    "input": [
+      {
+        "name": "data",
+        "type": "pandas.DataFrame",
+        "mode": "single",
+        "visible": true
+      },
+      {
+        "name": "config",
+        "type": "Dict",
+        "mode": "single",
+        "visible": false
+      },
+      {
+        "name": "operation_config",
+        "type": "Dict",
+        "mode": "single",
+        "visible": false
+      }
+    ],
+    "output": [
+      {
+        "name": "data",
+        "type": "pandas.DataFrame"
+      }
+    ],
+    "function_call": "database_insertion.process($input)"
+  },
+  "ui": {
+    "config": {
+      "label": "Configuration",
+      "mode": "all",
+      "options": {
+        "hostname": {
+          "label": "Host name",
+          "type": "text",
+          "required": true,
+          "isMetaData": false,
+          "className": "p-col-6",
+          "name": "hostname"
+        },
+        "database": {
+          "label": "Database",
+          "type": "text",
+          "required": true,
+          "isMetaData": false,
+          "className": "p-col-6",
+          "name": "database"
+        },
+        "port": {
+          "label": "port",
+          "type": "text",
+          "required": true,
+          "isMetaData": false,
+          "className": "p-col-6",
+          "name": "port"
+        },
+        "user": {
+          "label": "User",
+          "type": "text",
+          "required": true,
+          "isMetaData": false,
+          "className": "p-col-6",
+          "name": "user"
+        },
+        "password": {
+          "label": "Password",
+          "type": "text",
+          "required": true,
+          "isMetaData": false,
+          "className": "p-col-6",
+          "name": "password"
+        }
+      }
+    },
+    "operation_config": {
+      "label": " operations Configuration",
+      "mode": "single",
+      "options": {
+        "Operation": {
+          "label": "Operation",
+          "mode": "all",
+          "options": {
+            "column_name": {
+              "label": "Enter the columns ",
+              "type": "text",
+              "required": false,
+              "isMetaData": false,
+              "className": "p-col-6",
+              "name": "column_name"
+            },
+            "table": {
+              "label": "Enter the tablename to view the inserted records",
+              "type": "text",
+              "required": false,
+              "isMetaData": false,
+              "className": "p-col-6",
+              "name": "table"
+            },
+
+            "schema": {
+              "label": "Enter the schema name",
+              "type": "text",
+              "required": false,
+              "isMetaData": false,
+              "className": "p-col-6",
+              "name": "table"
+            },
+            "operations": {
+              "label": "Operations",
+              "type": "dropdown",
+              "required": true,
+              "isMetaData": false,
+              "className": "p-col-6",
+              "values": {
+                "INSERT": "INSERT",
+                "SELECT": "SELECT",
+                "UPDATE": "CREATE"
+              },
+              "name": "operations"
+            }
+          }
+        },
+        "General_Query": {
+          "label": "Operation",
+          "mode": "all",
+          "options": {
+            "general_query": {
+              "label": "Enter the query ",
+              "type": "text",
+              "required": true,
+              "isMetaData": false,
+              "className": "p-col-12",
+              "name": "general query"
+            },
+            "table": {
+              "label": "Enter the tablename to view the inserted records",
+              "type": "text",
+              "required": false,
+              "isMetaData": false,
+              "className": "p-col-6",
+              "name": "table"
+            }
+          }
+        }
+      }
+    }
+  },
+  "control_flow": {},
+  "visualization": [],
+  "deployment": {}
+}

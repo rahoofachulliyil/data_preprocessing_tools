@@ -1,0 +1,96 @@
+{
+    "name": "delete",
+    "type": "pandas",
+    "display_name": "delete",
+    "category": "test",
+    "requirements_path": "requirements.txt",
+    "documentation_path": "readme.md",
+    "integration": {
+      "input": [
+        
+        {
+          "name": "config",
+          "type": "Dict",
+          "mode": "single",
+          "visible": false
+        }
+        
+      ],
+      "output": [
+        {
+          "name": "data",
+          "type": "pandas.DataFrame"
+        }
+      ],
+      "function_call": "delete.process($input)"
+    },
+    "ui": {
+      "config": {
+        "label": "Configuration",
+        "mode": "all",
+        "options": {
+          "hostname": {
+            "label": "Host name",
+            "type": "text",
+            "required": true,
+            "isMetaData": false,
+            "className": "p-col-6",
+            "name": "hostname"
+          },
+          "database": {
+            "label": "Database",
+            "type": "text",
+            "required": true,
+            "isMetaData": false,
+            "className": "p-col-6",
+            "name": "database"
+          },
+          "port": {
+            "label": "port",
+            "type": "text",
+            "required": true,
+            "isMetaData": false,
+            "className": "p-col-6",
+            "name": "port"
+          },
+          "user": {
+            "label": "User",
+            "type": "text",
+            "required": true,
+            "isMetaData": false,
+            "className": "p-col-6",
+            "name": "user"
+          },
+          "password": {
+            "label": "Password",
+            "type": "text",
+            "required": true,
+            "isMetaData": false,
+            "className": "p-col-6",
+            "name": "password"
+          },
+          "table": {
+            "label": "Enter the tablename to view the inserted records",
+            "type": "text",
+            "required": false,
+            "isMetaData": false,
+            "className": "p-col-6",
+            "name": "table"
+          },
+          "schema": {
+            "label": "Enter the schema to view the inserted records",
+            "type": "text",
+            "required": false,
+            "isMetaData": false,
+            "className": "p-col-6",
+            "name": "table"
+          }
+        }
+      }
+     
+    },
+    "control_flow": {},
+    "visualization": [],
+    "deployment": {}
+  }
+  

@@ -1,0 +1,36 @@
+{
+    "name": "Decompose_and_transform_different_input_types",
+    "type": "pandas",
+    "category": "test",
+    "display_name": "Decompose and transform different input types",
+    "requirements_path": "requirements.txt",
+    "documentation_path": "readme.md",
+    "integration": {
+      "input": [
+        {
+          "name": "data",
+          "type": "pandas.DataFrame",
+          "mode": "single",
+          "visible": true
+        },
+        {
+          "name": "column_data",
+          "type": "pandas.DataFrame",
+          "mode": "single",
+          "visible": true
+        }
+      ],
+      "output": [
+        {
+          "name": "data",
+          "type": "pandas.DataFrame"
+        }
+      ],
+      "function_call": "Decompose_and_transform_different_input_types.process($input)"
+    },
+    "ui": {},
+    "control_flow": {},
+    "visualization": [],
+    "deployment": {}
+  }
+  
